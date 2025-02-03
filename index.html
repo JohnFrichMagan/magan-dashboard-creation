@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Dashboard</div>
+            <ul>
+                <li class="nav-item" id="reports-tab">Reports</li>
+                <li class="nav-item" id="accounts-tab">Accounts
+                    <ul class="submenu">
+                        <li id="users-tab">Users</li>
+                        <li id="temp-user-tab">Temp User</li>
+                        <li id="user-count-tab">Number of Users</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Reports Content -->
+            <div id="reports-content" class="section">
+                <h2>REPORTS</h2>
+                <p>Overview of the current reports...</p>
+            </div>
+
+            <!-- Users Content -->
+            <div id="users-content" class="section">
+                <h2>USERS</h2>
+                <p>List of all registered users...</p>
+            </div>
+
+            <!-- Temp User Content -->
+            <div id="temp-user-content" class="section">
+                <h2>Temp User</h2>
+                <p>Details about temporary users...</p>
+            </div>
+
+            <!-- User Count Content -->
+            <div id="user-count-content" class="section">
+                <h2>Number of Users</h2>
+                <p>Total registered users: <span id="user-count">0</span></p>
+            </div>
+
+            <!-- Add User Form -->
+            <div id="add-user-form" class="section">
+                <h2>Add New User</h2>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="User Name" required><br><br>
+                    <input type="email" placeholder="User Email" required><br><br>
+                    <button type="submit">Add User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle content -->
+    <script>
+        // Function to hide all sections
+        function hideAllSections() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+        }
+
+        // Function to show the clicked section
+        function showSection(sectionId) {
+            hideAllSections(); // Hide all sections before showing the clicked one
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'block'; // Show the selected section
+            }
+        }
+
+        // Event Listeners for Navigation
+        document.getElementById('reports-tab').addEventListener('click', function() {
+            showSection('reports-content');
+        });
+
+        document.getElementById('users-tab').addEventListener('click', function() {
+            showSection('users-content');
+        });
+
+        document.getElementById('temp-user-tab').addEventListener('click', function() {
+            showSection('temp-user-content');
+        });
+
+        document.getElementById('user-count-tab').addEventListener('click', function() {
+            showSection('user-count-content');
+        });
+
+        // Initially show the reports content
+        showSection('reports-content');
+    </script>
+</body>
+</html>
