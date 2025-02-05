@@ -1,41 +1,39 @@
-/* Resetting default margins and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
-    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #01010a;
+    color: #333;
+    text-align: center;
 }
 
-/* Main container layout */
 .container {
     display: flex;
     height: 100vh;
 }
 
-/* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color: #1a1a1a;
+    background-color: #f2f6f8;
     padding: 20px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar:hover {
-    width: 300px; /* Slightly expand sidebar on hover */
+    width: 300px; 
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #f78fb3;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #010a0c;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -43,14 +41,16 @@ body {
 .nav-item {
     list-style: none;
     padding: 15px 10px;
+    text-align: left;
+    font-weight: bolder;
     cursor: pointer;
-    font-size: 18px;
-    color: #bbb;
+    font-size: 20px;
+    color: #010a0f;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-item:hover {
-    background-color: #f78fb3;
+    background-color: #bbeebb;
     color: #fff;
 }
 
@@ -64,32 +64,86 @@ body {
     display: block;
 }
 
-/* Content Area Styles */
 .content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 40px;
     overflow-y: auto;
+    background-color: #01080a;
 }
 
-/* Section Styles */
 .section {
     display: none;
-    padding: 50px;
-    background-color: #222;
+    padding: 40px;
+    background-color: #0bbeeb;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 h2 {
-    font-size: 50px;
-    color: #f78fb3;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #02010a;
     margin-bottom: 15px;
 }
 
-/* Button and Form Styles */
+.card {
+    background-color: #f5f6f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card p {
+    margin: 10px 0;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.card strong {
+    font-weight: bolder;
+    color: #000508;
+    font-size: 24px;
+}
+
+.user-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+}
+
+.user-card p {
+    margin: 10px 0;
+}
+
+
+.temp-user-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 button {
-    background-color: #f78fb3;
-    color: #222;
+    background-color: #00070c;
+    color: #fff;
     border: none;
     padding: 12px 20px;
     cursor: pointer;
@@ -99,42 +153,49 @@ button {
 }
 
 button:hover {
-    background-color: #d16998;
+    background-color: #0bbeeb;
 }
 
 form input {
     padding: 12px;
     margin-bottom: 15px;
     width: 100%;
-    background-color: #333;
-    border: 1px solid #444;
-    color: #fff;
+    background-color: #0bbeeb;
+    border: 1px solid #bdc3c7;
+    color: #333;
     border-radius: 5px;
 }
 
 form input:focus {
     outline: none;
-    border-color: #f78fb3;
+    border-color: #3498db;
 }
 
-/* Smooth Transitions for Sections */
-.section {
-    opacity: 0;
-    transition: opacity 0.5s ease;
+.nav-item:hover, .submenu li:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.submenu li {
+    font-size: 16px;
+    padding: 10px 0;
 }
 
 .section[style*="display: block"] {
     opacity: 1;
 }
 
-/* Hover Effect on Sidebar Links */
-.nav-item:hover, .submenu li:hover {
-    background-color: #f78fb3;
-    color: #fff;
-}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-/* Submenu styling */
-.submenu li {
-    font-size: 16px;
-    padding: 10px 0;
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 20px;
+    }
 }

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
+        
         <div class="sidebar">
             <div class="logo">Dashboard</div>
             <ul>
@@ -23,45 +24,76 @@
             </ul>
         </div>
 
-        <!-- Main Content -->
+        
         <div class="content">
-            <!-- Reports Content -->
+            
             <div id="reports-content" class="section">
                 <h2>REPORTS</h2>
-                <p>Overview of the current reports...</p>
+                <div class="card">
+                    <p><strong>Latest Financial Report:</strong></p>
+                    <p>Revenue for 2025 has increased by 25% compared to 2024.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Sales Growth:</strong></p>
+                    <p>Sales in the last month grew by 5%, with a total of 100 new customers onboarded.</p>
+                </div>
             </div>
 
-            <!-- Users Content -->
+          
             <div id="users-content" class="section">
                 <h2>USERS</h2>
-                <p>List of all registered users...</p>
+                <div class="card">
+                    <p><strong>User #1:</strong> Shein</p>
+                    <p><strong>Email:</strong> Shein01@gmail.com</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+                <div class="card">
+                    <p><strong>User #2:</strong>Frich</p>
+                    <p><strong>Email:</strong> Frich02@gmail.com</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+                <div class="card">
+                    <p><strong>User #3:</strong> Kyle</p>
+                    <p><strong>Email:</strong> Kyle03@gmail.com</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+                <div class="card">
+                    <p><strong>User #4:</strong> John</p>
+                    <p><strong>Email:</strong> John04@gmail.com</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+                <div class="card">
+                    <p><strong>User #5:</strong> Carl</p>
+                    <p><strong>Email:</strong> Carl05@gmail.com</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
             </div>
 
             <!-- Temp User Content -->
             <div id="temp-user-content" class="section">
                 <h2>Temp User</h2>
-                <p>Details about temporary users...</p>
+                <div class="card">
+                    <p><strong>Temp User #1:</strong> Carl</p>
+                    <p><strong>Email:</strong> Carl05@gmail.com</p>
+                    <p><strong>Access Level:</strong> Limited</p>
+                </div>
+                <div class="card">
+                    <p><strong>Temp User #2:</strong> John</p>
+                    <p><strong>Email:</strong> John04@gmail.com</p>
+                    <p><strong>Access Level:</strong> Limited</p>
+                </div>
             </div>
 
-            <!-- User Count Content -->
+            
             <div id="user-count-content" class="section">
                 <h2>Number of Users</h2>
-                <p>Total registered users: <span id="user-count">0</span></p>
+                <div class="card">
+                    <p>Total registered users: <span id="user-count">5</span></p>
+                </div>
             </div>
-
-            <!-- Add User Form -->
-            <div id="add-user-form" class="section">
-                <h2>ADD NEW USERS</h2>
-                <form action="#" method="POST">
-                    <input type="text" placeholder="User Name" required><br><br>
-                    <input type="email" placeholder="User Email" required><br><br>
-                    <button type="submit">Add User</button>
-                </form>
-            </div>
-        </div>
+           
     </div>
     <script>
-        
         function hideAllSections() {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
@@ -69,16 +101,16 @@
             });
         }
 
-        // Function to show the clicked section
+        
         function showSection(sectionId) {
-            hideAllSections(); // Hide all sections before showing the clicked one
+            hideAllSections();
             const section = document.getElementById(sectionId);
             if (section) {
-                section.style.display = 'block'; // Show the selected section
+                section.style.display = 'block'; 
             }
         }
 
-        // Event Listeners for Navigation
+       
         document.getElementById('reports-tab').addEventListener('click', function() {
             showSection('reports-content');
         });
@@ -95,7 +127,7 @@
             showSection('user-count-content');
         });
 
-        // Initially show the reports content
+        
         showSection('reports-content');
     </script>
 </body>
